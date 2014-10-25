@@ -1,0 +1,53 @@
+#!/usr/bin/ruby
+# -*- encoding : utf-8 -*-
+
+require 'yaml'
+require "docopt"
+require 'pp'
+
+require_relative 'oo_reader'
+require_relative 'comptes'
+require_relative 'depenses'
+
+doc = <<DOCOPT
+Usage: #{__FILE__} <fichier_comptes.ods>  [-c <config_file>]
+
+Options:
+  -c --config   Config file to use
+DOCOPT
+
+begin
+  docopt = Docopt::docopt(doc)
+rescue Docopt::Exit => e
+  puts e.message
+  exit 1
+end
+
+
+# Test Ods file existence
+ods_file = docopt['<fichier_comptes.ods>']
+unless File.exists?(ods_file)
+  puts "#{ods_file} n'existe pas"
+  exit 1
+end
+
+# Open config
+config_file = docopt['--config'] ? docopt['<config_file>'] : 'config.yml'
+conf = YAML.load_file(config_file)
+
+# Solving
+o = OoReader.new(ods_file, conf)
+Comptes.affichage_probleme(o)
+
+resultat = Comptes.calcul_dettes(o, conf['transferts_priorities_order'])
+
+puts
+puts
+puts "Résultat :"
+puts
+puts resultat
+
+puts
+puts
+puts "Vérification :"
+Comptes.affichage_verification_resultat(o, resultat)

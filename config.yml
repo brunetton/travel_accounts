@@ -1,0 +1,7 @@
+texte_participants: 'Participants :'
+
+column_numbers:
+  prenom: 1
+  montant: 3
+  pourquoi: 4
+  pour_qui: 5
