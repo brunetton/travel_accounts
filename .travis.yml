@@ -1,0 +1,4 @@
+language: ruby
+rvm:
+  - 1.9
+script: ruby tests/test_comptes.rb
