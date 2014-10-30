@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/brunetton/travel_accounts.svg?branch=master)](https://travis-ci.org/brunetton/travel_accounts)
+
 # What's this stuff ?
 
 The goal of this project is to easylly solve accounts problems that involve more than two persons;
