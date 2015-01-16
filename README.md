@@ -42,7 +42,7 @@ In order to pass this array of datas to the program, we use an ODS (LIbreOffice 
   * members list
   * this array of expenses
 
-You can open and modify the existing `sample.od` file.
+You can open and modify the existing `sample.ods` file.
 
 ### Edit config file
 
