@@ -45,8 +45,10 @@ class Depenses
     pour_qui = Array(pour_qui) unless pour_qui == :tous
     [qui, pour_qui].flatten.each do |prenom|
       next if prenom == :tous
-      raise "prénom inconnu : '#{prenom}'. Les prénoms annoncés en début de fichier sont {#{@participants.join(', ')}}" \
-            unless @participants.include?(prenom)
+      if not @participants.include?(prenom)
+        raise "prénom inconnu : '#{prenom}'. Les prénoms annoncés en début de fichier sont {#{@participants.join(', ')}}" \
+             + "\n#{qui} - #{combien} - #{pourquoi} - #{pour_qui}"
+      end
     end
     pour_qui = [pour_qui] if pour_qui.class == String
     @depenses << {
