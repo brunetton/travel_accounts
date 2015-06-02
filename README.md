@@ -76,6 +76,16 @@ Doing that,
     * Rajesh gives back 20.50€, which is ok :
     20.50 = 12.50 (1/4 of 50 for good restaurant) + 11 (1/3 of 33 for tour effeil Visit) - 3.00 of toilets for Sheldon
 
+## A little more advanced example
+
+`sample2.ods` shows a little more advanced spreadsheet :
+  * a conversion rate is used in spreadsheet. So a specific conf file `config-for-sample2.yml` is used, to say to program that the column to be used for amounts is column number 3, not number 2
+  * datas are organized into two parts: day 1 and day 2
+
+To calculate the result, run :
+
+    ./comptes sample2.ods -c config-sample2.yml
+
 # Things TODO
 
   * Remove all French occurences in code
