@@ -50,7 +50,7 @@ You can edit config.yml to let the program to find "who paid ?", "How much ?", "
 
 ### Lunch program and get results
 
-    ./comptes accounts.ods
+    ./comptes sample.ods
 
 You should see a result matrix (here the result for the example) :
 
