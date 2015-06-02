@@ -31,7 +31,7 @@ The table looks like this :
 
 ### Debian
     aptitude install rubygems libxml2 libxml2-dev
-    gem install zip --no-ri --no-rdoc
+    gem install rubyzip --no-ri --no-rdoc
     gem install libxml-ruby --no-ri --no-rdoc
 
 ## Usage
