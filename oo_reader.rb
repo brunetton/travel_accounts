@@ -83,6 +83,11 @@ class OoReader
 
   def scanner_tableau(noeud_depenses)
     while true do
+      # Check if it is a row that contains a spanned cell
+      if noeud_depenses.find("table:table-cell[@table:number-columns-spanned]").first
+        # Spanned cell, ignore it
+        noeud_depenses = noeud_depenses.next
+      end
       prenom = noeud_depenses.find("table:table-cell[#{@config['column_numbers']['prenom']}]").first.content
       personnes_concernees = noeud_depenses.find("table:table-cell[#{@config['column_numbers']['pour_qui']}]").first.content
       montant = noeud_depenses.find("table:table-cell[#{@config['column_numbers']['montant']}]").first.content
