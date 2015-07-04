@@ -2,7 +2,7 @@
 
 # What's this stuff ?
 
-The goal of this project is to easylly solve accounts problems that involve more than two persons;
+The goal of this project is to easily solve accounts problems that involve more than two persons;
 typically when travelling by group.
 
 
