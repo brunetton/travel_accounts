@@ -39,7 +39,7 @@ conf = YAML.load_file(config_file)
 o = OoReader.new(ods_file, conf)
 Comptes.affichage_probleme(o)
 
-resultat = Comptes.calcul_dettes(o, conf['transferts_priorities_order'])
+resultat = Comptes.calcul_dettes(o, conf['transfers_priorities_order'])
 
 puts
 puts

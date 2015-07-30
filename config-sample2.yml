@@ -5,3 +5,10 @@ column_numbers:
   montant: 3
   pourquoi: 4
   pour_qui: 5
+
+# Falcutatif. Préciser les noms des personnes qui ont le plus de facilités à effectuer des virements bancaires.
+# L'algorithme en tiens compte, les personnes en début de la liste sont succeptibles d'avoir à faire plus de
+# transferts que les personnes à la fin de la liste.
+transfers_priorities_order:
+  - Leonard
+  - Penny

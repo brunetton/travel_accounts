@@ -76,11 +76,19 @@ Doing that,
     * Rajesh gives back 20.50€, which is ok :
     20.50 = 12.50 (1/4 of 50 for good restaurant) + 11 (1/3 of 33 for tour effeil Visit) - 3.00 of toilets for Sheldon
 
-## A little more advanced example
+## A little more
+
+### Transfers priorities order
+
+The more the problems are large, the more they have solutions. To avoid program choosing an arbitrary solution that does not makes everybody happy, you can tell him *"what participant is the more comfortable with money transferts"*.
+Of course, people in the list should be people who will have to pay at the end, it's useless to give other names.
+
+### A little more advanced example
 
 `sample2.ods` shows a little more advanced spreadsheet :
   * a conversion rate is used in spreadsheet. So a specific conf file `config-for-sample2.yml` is used, to say to program that the column to be used for amounts is column number 3, not number 2
   * datas are organized into two parts: day 1 and day 2
+  * transfers_priorities_order is used : Leonard is the guy who is the most comfortable with bank transfers
 
 To calculate the result, run :
 
