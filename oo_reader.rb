@@ -5,15 +5,11 @@ require 'xml/libxml'   # gem libxml
 require 'matrix'
 
 require_relative 'depenses'
+require_relative 'file_reader'
 
-class OoReader
+class OoReader < FileReader
 
-  attr_accessor :filename
   attr_accessor :contenu_xml
-  attr_accessor :participants
-  attr_accessor :nb_tableaux_parse  # Nombre de sous tableaux trouvés
-
-  attr_accessor :depenses
 
   # config : {
   #   'texte_participants' => 'Participants :',

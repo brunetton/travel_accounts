@@ -36,17 +36,36 @@ The table looks like this :
 
 ## Usage
 
-### Create the LibreOffice document
+Expenses are given in a file. This file can be :
+  * a simple text file in a defined format (.txt)
+  * an OpenOffice Spreadsheet document (.ods document)
 
-In order to pass this array of datas to the program, we use an ODS (LIbreOffice calc, OpenOffice calc, ...) that containts :
-  * members list
-  * this array of expenses
+### Create the input document
 
-You can open and modify the existing `sample.ods` file.
+Depending on file format you want to use, you can use LibreOffice calc, OpenOffice calc for spreadsheet documents, or a simple text editor for text format (more simple on a smartphone in hollydays).
 
-### Edit config file
+You can open and modify the existing `sample.txt` or `sample.ods` files.
 
-You can edit config.yml to let the program to find "who paid ?", "How much ?", "For who ?" and "What for ?" coulumns.
+#### Text file example
+
+Here is the `sample.txt` file you can find in project:
+
+    Participants: Penny, Sheldon, Leonard, Rajesh
+
+    ## Day 1
+    - Sheldon 132 2 packbags [Leonard, Penny]
+    - Leonard 32 bad restaurant
+    - Penny 23 watter bottle airport [Sheldon]
+    - Leonard 50 good restaurant
+    ## Day 2
+    - Penny 33 tour effeil Visit [Leonard, Rajesh, Penny]
+    - Rajesh 3 toilets for Sheldon [Sheldon]
+    - Rajesh 6,5 bus tickets
+    - Leonard 43 restaurant
+
+### Edit config file (for ODS format)
+
+If you use ODS file, you can edit config.yml to let the program to find "who paid ?", "How much ?", "For who ?" and "What for ?" coulumns (if not using defaults values).
 
 ### Lunch program and get results
 

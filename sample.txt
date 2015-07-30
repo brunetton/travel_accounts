@@ -1,0 +1,12 @@
+Participants: Penny, Sheldon, Leonard, Rajesh
+
+## Day 1
+- Sheldon 132 2 packbags [Leonard, Penny]
+- Leonard 32 bad restaurant
+- Penny 23 watter bottle airport [Sheldon]
+- Leonard 50 good restaurant
+## Day 2
+- Penny 33 tour effeil Visit [Leonard, Rajesh, Penny]
+- Rajesh 3 toilets for Sheldon [Sheldon]
+- Rajesh 6,5 bus tickets
+- Leonard 43 restaurant

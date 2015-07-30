@@ -6,14 +6,18 @@ require "docopt"
 require 'pp'
 
 require_relative 'oo_reader'
+require_relative 'txt_reader'
 require_relative 'comptes'
 require_relative 'depenses'
 
 doc = <<DOCOPT
-Usage: #{__FILE__} <fichier_comptes.ods>  [-c <config_file>]
+Usage: #{__FILE__} <input_file>  [-c <config_file>]
 
 Options:
   -c --config   Config file to use
+
+Input file can be OpenOffice Spreadsheet file (.ods), or text file (.txt).
+See examples for more about format.
 DOCOPT
 
 begin
@@ -24,10 +28,10 @@ rescue Docopt::Exit => e
 end
 
 
-# Test Ods file existence
-ods_file = docopt['<fichier_comptes.ods>']
-unless File.exists?(ods_file)
-  puts "#{ods_file} n'existe pas"
+# Test file existence
+input_file = docopt['<input_file>']
+unless File.exists?(input_file)
+  puts "#{input_file} doesn't exists"
   exit 1
 end
 
@@ -36,7 +40,15 @@ config_file = docopt['--config'] ? docopt['<config_file>'] : 'config.yml'
 conf = YAML.load_file(config_file)
 
 # Solving
-o = OoReader.new(ods_file, conf)
+if input_file.end_with?('.ods')
+  o = OoReader.new(input_file, conf)
+elsif input_file.end_with?('.txt')
+  o = TxtReader.new(input_file, conf)
+else
+  puts "#{input_file}: unknown file extension. Must be '.txt' or '.ods'."
+  exit 2
+end
+
 Comptes.affichage_probleme(o)
 
 resultat = Comptes.calcul_dettes(o, conf['transfers_priorities_order'])

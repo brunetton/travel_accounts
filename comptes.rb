@@ -21,7 +21,9 @@ end
 class Comptes
 
   def self.affichage_probleme(oo_reader)
-    puts "Dépenses :" + (oo_reader.nb_tableaux_parse > 1 ? " (#{oo_reader.nb_tableaux_parse} sous tableaux trouvés)" : '')
+    print "Dépenses :"
+    print " (#{oo_reader.nb_tableaux_parse} sous tableaux trouvés)" if oo_reader.nb_tableaux_parse and oo_reader.nb_tableaux_parse > 1
+    print "\n"
     puts oo_reader.depenses
   end
 
@@ -54,7 +56,7 @@ class Comptes
     # Checking param type
     if depenses.class == Depenses
       # nop
-    elsif depenses.class == OoReader
+    elsif depenses.class < FileReader
       depenses = depenses.depenses
     else
       raise "type de donnée inconnue pour les dépenses : #{depenses.class}"
