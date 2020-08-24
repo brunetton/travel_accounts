@@ -5,6 +5,9 @@
 The goal of this project is to easily solve accounts problems that involve more than two persons;
 typically when travelling by group.
 
+## Alternative
+
+Since this project I discovered a super open source webapp alternative: [Splittypie](https://splittypie.com/). I prefer using Splittypie over this project for little accounts. But for complex hollidays, with many people and interractions I like to use my project with text input as it's super quick and easy to add complex transactions (transactions that doesn't concern all people in the group).
 
 ## Example
 
